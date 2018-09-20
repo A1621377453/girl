@@ -1,4 +1,4 @@
-package com.crn.demo;
+package com.crn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

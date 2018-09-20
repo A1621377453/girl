@@ -1,4 +1,4 @@
-package com.crn.demo.controller;
+package com.crn.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
