@@ -1,5 +1,7 @@
-package com.crn.demo;
+package com.crn.demo.controller;
 
+import com.crn.demo.domain.Girl;
+import com.crn.demo.service.GirlServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class GirlController {
      * 根据id查询女孩信息
      *
      * @param id
-     * @return com.crn.demo.Girl
+     * @return com.crn.demo.domain.Girl
      * @datetime 2018/9/20 9:52
      * @author crn
      */

@@ -1,5 +1,6 @@
-package com.crn.demo;
+package com.crn.demo.repository;
 
+import com.crn.demo.domain.Girl;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

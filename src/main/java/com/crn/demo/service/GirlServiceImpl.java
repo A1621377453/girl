@@ -1,5 +1,7 @@
-package com.crn.demo;
+package com.crn.demo.service;
 
+import com.crn.demo.domain.Girl;
+import com.crn.demo.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

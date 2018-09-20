@@ -1,4 +1,4 @@
-package com.crn.demo;
+package com.crn.demo.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
