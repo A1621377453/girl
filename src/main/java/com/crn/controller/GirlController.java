@@ -1,5 +1,6 @@
 package com.crn.controller;
 
+import com.crn.common.ResultInfo;
 import com.crn.domain.Girl;
 import com.crn.service.GirlServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,9 @@ public class GirlController {
      * @author crn
      */
     @GetMapping(value = "/findone")
-    public Girl findOne(Long id) {
-
-        Girl girl = girlService.findOne(id);
-        return girl;
+    public ResultInfo findGirl(Long id) {
+        ResultInfo info = girlService.findGirl(id);
+        return info;
     }
 
     /**

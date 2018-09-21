@@ -1,5 +1,7 @@
 package com.crn.service;
 
+import com.crn.exception.GirlException;
+import com.crn.common.ResultInfo;
 import com.crn.domain.Girl;
 import com.crn.repository.GirlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +38,21 @@ public class GirlServiceImpl {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 根据id查询女孩信息
+     *
+     * @param id
+     */
+    public ResultInfo findGirl(Long id) {
+        ResultInfo resultInfo = new ResultInfo();
+        Girl girl = findOne(id);
+        Integer age = girl.getAge();
+        if (age < 18) {
+            throw new GirlException(-1, "未成年少女禁止入内");
+        }
+        resultInfo.setInfo(1, "成功", girl);
+        return resultInfo;
     }
 }
