@@ -3,7 +3,10 @@ package com.crn.controller;
 import com.crn.domain.Girl;
 import com.crn.service.GirlServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author crn
@@ -31,20 +34,18 @@ public class GirlController {
     }
 
     /**
-     * 保存女孩
+     * 保存女孩(表单校验)
      *
-     * @param cupSize
-     * @param age
      * @return java.lang.String
      * @datetime 2018/9/20 9:51
      * @author crn
      */
     @PostMapping("/savegirl")
-    public String saveGirl(String cupSize, Integer age) {
+    public String saveGirl(@Valid Girl girl, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return bindingResult.getFieldError().getDefaultMessage();
+        }
 
-        Girl girl = new Girl();
-        girl.setAge(age);
-        girl.setCupSize(cupSize);
         int save = girlService.saveGirl(girl);
         if (save > 0) {
             return "保存成功";
